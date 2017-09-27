@@ -80,7 +80,7 @@ module SimpleCaptcha #:nodoc
         defaults[:time] = options[:time] || Time.now.to_i
 
         query = defaults.collect{ |key, value| "#{key}=#{value}" }.join('&')
-        "#{https://localhost:3000/simple_captcha?code=#{simple_captcha_key}&#{query}"
+        "https://localhost:3000/simple_captcha?code=#{simple_captcha_key}&#{query}"
       end
 
       def simple_captcha_field(options={})
