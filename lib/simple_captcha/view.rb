@@ -69,7 +69,7 @@ module SimpleCaptcha #:nodoc
         defaults[:time] = options[:time] || Time.now.to_i
 
         query = defaults.collect{ |key, value| "#{key}=#{value}" }.join('&')
-        url = "#{ENV['RAILS_RELATIVE_URL_ROOT']}/simple_captcha?code=#{simple_captcha_key}&#{query}"
+        url = "https://localhost:3000/simple_captcha?code=#{simple_captcha_key}&#{query}"
 
         id = simple_captcha_image_id(options)
         tag('img', :src => url, :alt => 'captcha', :id => id)
@@ -80,7 +80,7 @@ module SimpleCaptcha #:nodoc
         defaults[:time] = options[:time] || Time.now.to_i
 
         query = defaults.collect{ |key, value| "#{key}=#{value}" }.join('&')
-        "#{ENV['RAILS_RELATIVE_URL_ROOT']}/simple_captcha?code=#{simple_captcha_key}&#{query}"
+        "#{https://localhost:3000/simple_captcha?code=#{simple_captcha_key}&#{query}"
       end
 
       def simple_captcha_field(options={})
@@ -103,7 +103,7 @@ module SimpleCaptcha #:nodoc
 
         text = options[:refresh_button_text] || I18n.t('simple_captcha.refresh_button_text', default: 'Refresh')
 
-        link_to(text, "#{ENV['RAILS_RELATIVE_URL_ROOT']}/simple_captcha?id=#{simple_captcha_image_id(options)}", html)
+        link_to(text, "https://localhost:3000/simple_captcha?id=#{simple_captcha_image_id(options)}", html)
       end
 
       def simple_captcha_image_id(options={})
